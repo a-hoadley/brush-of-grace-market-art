@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Market Estimator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                "50": "#eff6ff",
+                "100": "#dbeafe",
+                "200": "#bfdbfe",
+                "300": "#93c5fd",
+                "400": "#60a5fa",
+                "500": "#3b82f6",
+                "600": "#2563eb",
+                "700": "#1d4ed8",
+                "800": "#1e40af",
+                "900": "#1e3a8a",
+                "950": "#172554"
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        pointer-events: none;
+        /* Artistic gradient mesh with multiple color stops */
+        background: 
+          radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.15), transparent 40%),
+          radial-gradient(circle at 80% 20%, rgba(147, 197, 253, 0.12), transparent 45%),
+          radial-gradient(circle at 40% 70%, rgba(191, 219, 254, 0.1), transparent 35%),
+          radial-gradient(circle at 90% 80%, rgba(96, 165, 250, 0.08), transparent 50%),
+          radial-gradient(circle at 10% 90%, rgba(59, 130, 246, 0.06), transparent 40%),
+          linear-gradient(135deg, rgba(239, 246, 255, 0.3) 0%, rgba(219, 234, 254, 0.2) 50%, rgba(191, 219, 254, 0.1) 100%);
+        opacity: 0.8;
+        filter: blur(80px);
+        transform: translateZ(0);
+        animation: float 20s ease-in-out infinite;
+      }
+      
+      /* Floating animation for organic movement */
+      @keyframes float {
+        0%, 100% { 
+          transform: translateZ(0) scale(1) rotate(0deg);
+        }
+        25% { 
+          transform: translateZ(0) scale(1.05) rotate(1deg);
+        }
+        50% { 
+          transform: translateZ(0) scale(0.95) rotate(-1deg);
+        }
+        75% { 
+          transform: translateZ(0) scale(1.02) rotate(0.5deg);
+        }
+      }
+      
+      /* Artistic overlay pattern */
+      body::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        pointer-events: none;
+        background-image: 
+          radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.03) 0%, transparent 25%),
+          radial-gradient(circle at 75% 75%, rgba(147, 197, 253, 0.03) 0%, transparent 25%),
+          radial-gradient(circle at 75% 25%, rgba(191, 219, 254, 0.02) 0%, transparent 25%),
+          radial-gradient(circle at 25% 75%, rgba(96, 165, 250, 0.02) 0%, transparent 25%);
+        background-size: 800px 800px, 600px 600px, 700px 700px, 900px 900px;
+        animation: drift 30s linear infinite;
+      }
+      
+      /* Drifting animation for the overlay */
+      @keyframes drift {
+        0% { 
+          background-position: 0% 0%, 100% 100%, 0% 100%, 100% 0%;
+        }
+        50% { 
+          background-position: 100% 50%, 0% 50%, 50% 0%, 50% 100%;
+        }
+        100% { 
+          background-position: 0% 0%, 100% 100%, 0% 100%, 100% 0%;
+        }
+      }
+      
+      /* Dark mode artistic background */
+      .dark body::before {
+        background: 
+          radial-gradient(circle at 20% 30%, rgba(30, 64, 175, 0.2), transparent 40%),
+          radial-gradient(circle at 80% 20%, rgba(29, 78, 216, 0.15), transparent 45%),
+          radial-gradient(circle at 40% 70%, rgba(59, 130, 246, 0.1), transparent 35%),
+          radial-gradient(circle at 90% 80%, rgba(37, 99, 235, 0.12), transparent 50%),
+          radial-gradient(circle at 10% 90%, rgba(30, 64, 175, 0.08), transparent 40%),
+          linear-gradient(135deg, rgba(15, 23, 42, 0.4) 0%, rgba(30, 41, 59, 0.3) 50%, rgba(51, 65, 85, 0.2) 100%);
+        opacity: 0.9;
+        filter: blur(120px);
+      }
+      
+      .dark body::after {
+        background-image: 
+          radial-gradient(circle at 25% 25%, rgba(30, 64, 175, 0.05) 0%, transparent 25%),
+          radial-gradient(circle at 75% 75%, rgba(29, 78, 216, 0.04) 0%, transparent 25%),
+          radial-gradient(circle at 75% 25%, rgba(59, 130, 246, 0.03) 0%, transparent 25%),
+          radial-gradient(circle at 25% 75%, rgba(37, 99, 235, 0.03) 0%, transparent 25%);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.1/",
+    "react": "https://esm.sh/react@^19.1.1",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.12.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-slate-50 dark:bg-slate-900">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

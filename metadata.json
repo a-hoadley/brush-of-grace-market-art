@@ -1,0 +1,5 @@
+{
+  "name": "Local Market Estimator",
+  "description": "An AI-powered tool to estimate the local resale value of items from an image and a zip code.",
+  "requestFramePermissions": []
+}
