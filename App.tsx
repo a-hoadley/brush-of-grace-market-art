@@ -58,16 +58,16 @@ const App: React.FC = () => {
 
     return (
         <ErrorBoundary>
-            <div className="min-h-screen text-slate-800 dark:text-slate-200 flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8 font-sans">
+            <div className="min-h-screen text-white dark:text-slate-200 flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8 font-sans">
             <div className="w-full max-w-2xl mx-auto">
                 <header className="text-center mb-8">
                     <div className="flex items-center justify-center gap-3 mb-2">
                         <BrandIcon />
-                        <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">
+                        <h1 className="text-3xl sm:text-4xl font-bold text-white dark:text-white">
                             Local Market Estimator
                         </h1>
                     </div>
-                    <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400">
+                    <p className="text-base sm:text-lg text-blue-100 dark:text-slate-400">
                         Upload an image and enter a zip code to get an AI-powered price estimate.
                     </p>
                 </header>
@@ -78,7 +78,7 @@ const App: React.FC = () => {
                             <ImageUploader onImageSelect={handleImageChange} imageUrl={imageUrl} />
 
                             <div>
-                                <label htmlFor="zipCode" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                                <label htmlFor="zipCode" className="block text-sm font-medium text-slate-900 dark:text-slate-300 mb-2">
                                     Local Zip Code
                                 </label>
                                 <input
