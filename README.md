@@ -46,6 +46,12 @@ npm run build
 
 The built files will be in the `dist` directory.
 
+## Live Demo
+
+🌐 **Live Site:** <https://a-hoadley.github.io/brush-of-grace-market-art/>
+
+The app is automatically deployed to GitHub Pages using GitHub Actions whenever changes are pushed to the main branch.
+
 ## Usage
 
 1. Upload an image of the item you want to price
@@ -68,7 +74,7 @@ The built files will be in the `dist` directory.
 
 ## Project Structure
 
-```
+```text
 src/
 ├── App.tsx              # Main application component
 ├── types.ts             # TypeScript type definitions
@@ -85,6 +91,7 @@ src/
 ## Error Handling
 
 The app includes comprehensive error handling for:
+
 - Invalid API keys
 - Network connectivity issues
 - File upload validation
